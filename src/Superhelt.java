@@ -17,7 +17,25 @@ public class Superhelt {
     }
 
     //get metode
-    public String
+    public String getHeroName(){
+        return heroName;
+    }
+
+    public String getRealName(){
+        return realName;
+    }
+
+    public String getSuperPower() {
+        return superPower;
+    }
+
+    public int getYearCreated(){
+        return yearCreated;
+    }
+
+    public String getIsHuman() {
+        return isHuman;
+    }
 
     //set metode
 
