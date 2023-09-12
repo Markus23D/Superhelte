@@ -1,8 +1,9 @@
-
+import java.util.ArrayList;
 
 public class Database {
 
-    private Superhelt[] superHelteListe;
+    private ArrayList<Superhelt> superHelteListe = new ArrayList();
+
     int count;
 
     public Database() {

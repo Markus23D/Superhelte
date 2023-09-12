@@ -43,8 +43,11 @@ public class Main {
 
                 liste.tilføjSuperHelte(superHeroName, realName, superPower, yearCreated, isHuman, strenght);
 
+                //  liste.visSuperhelte();
+
+
                 System.out.println("Superhelt tilføjet til Database");
-                System.out.println("\u2500". repeat(50));
+
                 System.out.println(" ");
 
 
@@ -52,10 +55,12 @@ public class Main {
                 System.exit(0);
             } else {
                 System.out.println("Ugyldigt valg. Prøv igen");
+
             }
 
         }
+
+        }
+
+
     }
-
-
-}
