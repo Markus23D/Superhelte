@@ -12,8 +12,18 @@ public class Database {
     }
 
     public void tilføjSuperHelte(String heroName, String realName, String superPower, int yearCreated, String isHuman, double strenght){
-        superHelteListe[count ++] = new Superhelt(heroName, realName, superPower, yearCreated, isHuman, strenght);
+        superHelteListe.add (new Superhelt(heroName, realName, superPower, yearCreated, isHuman, strenght));
 
+    }
+
+    //Vis alle superhelte
+    public void visSuperhelte(){
+        for (Superhelt superhelte:superHelteListe) {
+            System.out.println("\u2500".repeat(50));
+            System.out.println(superhelte);
+            
+        }
+    
     }
 
 

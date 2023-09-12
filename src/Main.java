@@ -1,4 +1,5 @@
-import javax.xml.crypto.Data;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -16,6 +17,7 @@ public class Main {
 
         while (true) {
             System.out.println("Indtast 1 for at oprette en superhelt");
+            System.out.println("Indtast 2 for at se alle superhelte");
             System.out.println("Indtast 9 for at afslutte");
             int userChoice = Integer.valueOf(keyboard.nextLine());
 
@@ -53,7 +55,10 @@ public class Main {
 
             } else if (userChoice == 9) {
                 System.exit(0);
-            } else {
+
+        }else if(userChoice==2){
+                    liste.visSuperhelte();
+                } else {
                 System.out.println("Ugyldigt valg. Prøv igen");
 
             }
