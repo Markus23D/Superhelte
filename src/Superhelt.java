@@ -36,9 +36,45 @@ public class Superhelt {
     public String getIsHuman() {
         return isHuman;
     }
+    public double getStrenght(){
+        return strenght;
+    }
 
     //set metode
 
+    public void setHeroName(String heroName) {
+        this.heroName = heroName;
+    }
 
+    public void setRealName(String realName){
+        this.realName = realName;
+    }
 
+    public void setSuperPower(String SuperPower) {
+        this.superPower = SuperPower;
+    }
+    public void setYearCreated(int yearCreated){
+        this.yearCreated = yearCreated;
+    }
+
+    public void setIsHuman(String isHuman){
+        this.isHuman = isHuman;
+    }
+
+    public void setStrenght(double strenght){
+        this.strenght = strenght;
+    }
+
+    @Override
+//to string
+    public String toString() {
+        return "Superhelte navn = " + heroName
+                + "\n" + "Civile navn = " + realName
+                + "\n" + "Superhelte kraft = " + superPower
+                + "\n" + "Året han er lavet = " + yearCreated
+                + "\n" + "Er superhelten menneske? = " + isHuman
+                + "\n" + "Superheltens styrke lvl = " + strenght
+                + "\n" + "\u2500".repeat(50);
+
+    }
 }
