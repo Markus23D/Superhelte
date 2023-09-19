@@ -16,13 +16,22 @@ public class Menu {
         //startmenu
 
 
+
         while (true) {
             System.out.println("Indtast 1 for at oprette en ny superhelt");
             System.out.println("Indtast 2 for at se alle superhelte");
             System.out.println("Indtast 3 for at søge på en superhelt");
             System.out.println("Indtast 4 for at redigere en superhelt");
             System.out.println("Indtast 9 for at afslutte");
-            int userChoice = Integer.valueOf(keyboard.nextLine());
+            int userChoice =0;
+
+            try {
+                userChoice = Integer.parseInt(keyboard.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Fejl: Indtast venligst et gyldigt heltal.");
+                continue;
+            }
+
 
             if (userChoice == 1) {
                 System.out.println("Okay, lad os gøre det!");
@@ -36,8 +45,14 @@ public class Menu {
                 System.out.println("Hvad er heltens superkræft");
                 String superPower = keyboard.nextLine();
 
+                int yearCreated=0;
+                try{
                 System.out.println("Hvilket år er superhelten lavet");
-                int yearCreated = Integer.valueOf(keyboard.nextLine());
+                yearCreated = Integer.parseInt(keyboard.nextLine());
+                } catch (NumberFormatException e) {
+                    System.out.println("Fejl: Indtast venligst en gyldig værdi.");
+                    continue;
+                }
 
                 System.out.println("Er superhelten menneske? [Yes/no]");
                 String isHuman = keyboard.nextLine();
