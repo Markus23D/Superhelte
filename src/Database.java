@@ -3,9 +3,13 @@ import java.util.ArrayList;
 public class Database {
 
 
-    private ArrayList<Superhelt> superHelteListe = new ArrayList();
+    private ArrayList<Superhelt> superHelteListe = new ArrayList<>();
 
     int count;
+
+    public ArrayList<Superhelt> getSuperHelteListe() {
+        return superHelteListe;
+    }
 
     public void tilføjSuperHelte(String heroName, String realName, String superPower, int yearCreated, String isHuman, double strenght) {
         superHelteListe.add(new Superhelt(heroName, realName, superPower, yearCreated, isHuman, strenght));
@@ -33,14 +37,26 @@ public class Database {
         }
         if (!heroFound) {
             System.out.println("Der findes ingen helte i listen med navn: " + "\"" + heroName + "\"");
-            }
+        }
 
 
         return heroNames;
-
+    }
         //Redigering
+        public void sletSuperhelt (Superhelt superhelt){
+            if (superHelteListe.contains(superhelt)) {
+                superHelteListe.remove(superhelt);
 
+            } else {
+                System.out.println(superhelt.getHeroName() + " blev ikke fundet i databasen.");
+            }
+        }
 
 
     }
-}
+
+
+
+
+
+
