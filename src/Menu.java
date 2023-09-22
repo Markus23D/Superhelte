@@ -22,6 +22,7 @@ public class Menu {
             System.out.println("Indtast 2 for at se alle superhelte");
             System.out.println("Indtast 3 for at søge på en superhelt");
             System.out.println("Indtast 4 for at redigere en superhelt");
+            System.out.println("Indtast 5 for at slette en superhelt");
             System.out.println("Indtast 9 for at afslutte");
             int userChoice =0;
 
@@ -66,7 +67,6 @@ public class Menu {
 
                 System.out.println("Superhelt tilføjet til Database");
 
-                System.out.println(" ");
 
 
             } else if (userChoice == 9) {
@@ -83,6 +83,9 @@ public class Menu {
 
             } else if (userChoice == 4) {
                 redigerPerson();
+
+            }else if (userChoice==5){
+                sletSuperHelt();
 
             } else {
                 System.out.println("Ugyldigt valg. Prøv igen");
@@ -163,5 +166,40 @@ public class Menu {
 
         }
 
+        //slettefunktion
     }
-}
+        public void sletSuperHelt(){
+            System.out.println("Søg på helten du vil  slette");
+            String superheltnavn = keyboard.nextLine();
+            ArrayList<Superhelt> resultater = liste.findHeroName(superheltnavn);
+
+            if (resultater.isEmpty()) {
+                System.out.println("Ingen matchende superhelte fundet.");
+                System.out.println("\u2500".repeat(50));
+
+            } else if (resultater.size() == 1) {
+                Superhelt superhelt = resultater.get(0);
+                liste.sletSuperhelt(superhelt);
+                System.out.println(superhelt.getHeroName() + " er blevet slettet fra databasen.");
+                System.out.println("\u2500".repeat(50));
+            } else {
+                System.out.println("Flere matchende superhelte fundet. Vælg en ved at indtaste nummeret:");
+                for (int i = 0; i < resultater.size(); i++) {
+                    Superhelt superhelt = resultater.get(i);
+                    System.out.println((i + 1) + ". " + superhelt.getHeroName());
+                }
+
+                int valg = Integer.parseInt(keyboard.nextLine());
+
+                if (valg >= 1 && valg <= resultater.size()) {
+                    Superhelt superhelt = resultater.get(valg - 1);
+                    liste.sletSuperhelt(superhelt);
+                    System.out.println(superhelt.getHeroName() + " er blevet slettet fra databasen.");
+                    System.out.println("\u2500".repeat(50));
+                } else {
+                    System.out.println("Ugyldigt valg.");
+                }
+            }
+        }
+
+    }
